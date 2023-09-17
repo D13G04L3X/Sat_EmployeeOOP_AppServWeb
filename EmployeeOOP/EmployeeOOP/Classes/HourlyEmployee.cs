@@ -6,27 +6,31 @@ using System.Threading.Tasks;
 
 namespace EmployeeOOP.Classes
 {
-    public class CommissionEmployee : Employee      //Se hace la herencia de la clase
+    public class HourlyEmployee : Employee
     {
         #region Properties
-        public decimal CommissionPercentage { get; set; }
-        public decimal Sales { get; set; }          //Ventas
+
+        public decimal Hours { get; set; }
+
+        public decimal HourValue { get; set; }
 
         #endregion
 
         #region Methods
-
+        public HourlyEmployee()
+        {
+        }
         public override decimal GetValueToPay()
         {
-            return (CommissionPercentage/100) * Sales;
+            return (Hours * HourValue);
         }
 
         public override string ToString()
         {
             return $"{base.ToString()}" +
-                $"\n\tCommission Percentage......{(CommissionPercentage/100) * Sales}:P2";
+                $"Salario devengado por horas: {(Hours * HourValue):C2} \n\t ";
         }
 
-        #endregion
+        #endregion 
     }
 }

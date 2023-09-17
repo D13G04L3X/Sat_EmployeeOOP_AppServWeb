@@ -74,14 +74,62 @@ try
         BirthDate = dateObject,
         HiringDate = dateObject,
         IsActive = true,
-        CommissionPercentage = commissionPercentage,
         Sales = sales,
+        CommissionPercentage = commissionPercentage,
     };
 
     Console.WriteLine(commissionEmployee);
 
     Console.WriteLine("");
 
+    Console.WriteLine("******************************");
+    Console.WriteLine("* BASE & COMMISSION EMPLOYEE *");
+    Console.WriteLine("******************************");
+
+    Console.WriteLine("Ingresa su porcentaje de comisión:");
+    baseCommission = Convert.ToDecimal(Console.ReadLine());
+
+    Employee baseComissionEmployee = new BaseCommissionEmployee()
+    {
+        Id = 12345,
+        FirstName = firstName,
+        LastName = lastName,
+        BirthDate = dateObject,
+        HiringDate = dateObject,
+        IsActive = true,
+        CommissionPercentage = commissionPercentage,
+        Base = baseCommission,
+    };
+
+    Console.WriteLine(baseComissionEmployee);
+
+    Console.WriteLine("");
+
+    Console.WriteLine("******************************");
+    Console.WriteLine("* HOURLY EMPLOYEE *");
+    Console.WriteLine("******************************");
+
+    Console.Write("Ingresar número de horas: ");
+    hours = Convert.ToInt32(Console.ReadLine());
+
+    Console.Write("Ingresar valor por hora: ");
+    hourValue = Convert.ToDecimal(Console.ReadLine());
+
+    HourlyEmployee hourlyEmployee = new HourlyEmployee()
+    {
+        Id = 123456,
+        FirstName = firstName,
+        LastName = lastName,
+        BirthDate = dateObject,
+        HiringDate = dateObject,
+        IsActive = true,
+        HourValue = hourValue,
+        Hours = hours,
+    };
+
+    Console.WriteLine(hourlyEmployee);
+
+    Console.WriteLine("");
 }
 catch (Exception ex)
 {
