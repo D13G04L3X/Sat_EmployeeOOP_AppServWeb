@@ -3,9 +3,10 @@
 try
 {
     //Declaración de variables
-    int day, month, year;
+    int day, month, year, id;
     string firstName, lastName;
     decimal salary;
+    bool isActive;
 
     Console.WriteLine("OOP APPLICATION");
     Console.WriteLine("---------------");
@@ -13,10 +14,10 @@ try
     Console.Write("Ingresar el día: ");
     day = Convert.ToInt32(Console.ReadLine());
 
-    Console.Write("Ingresar el día: ");
+    Console.Write("Ingresar el mes: ");
     month = Convert.ToInt32(Console.ReadLine());
 
-    Console.Write("Ingresar el día: ");
+    Console.Write("Ingresar el año: ");
     year = Convert.ToInt32(Console.ReadLine());
 
     //Inicialización de clase Date
@@ -24,28 +25,71 @@ try
     Console.WriteLine("\n");
     Console.WriteLine(dateObject.ToString());
 
-    Console.WriteLine("Ingresar nombre completo: ");
+    Console.WriteLine("*******************");
+    Console.WriteLine("* SALARY EMPLOYEE *");
+    Console.WriteLine("*******************");
+
+    Console.WriteLine("Ingresar nombres: ");
+    firstName = Console.ReadLine();
+    Console.WriteLine("");
+
+    Console.WriteLine("Ingresar apellidos: ");
+    lastName = Console.ReadLine();
+    Console.WriteLine("");
+
+    Console.WriteLine("Ingresar salario devengado: ");
+    salary = Convert.ToDecimal(Console.ReadLine());
+    Console.WriteLine("");
+
+    Employee salaryEmployee = new SalaryEmployee()
+    {
+        Id = 12345,
+        FirstName = firstName,
+        LastName = lastName,
+        BirthDate = dateObject,
+        HiringDate = dateObject,
+        IsActive = true,
+        Salary = salary,
+    };
+
+    Console.WriteLine("");
+
+    Console.WriteLine("***********************");
+    Console.WriteLine("* COMMISSION EMPLOYEE *");
+    Console.WriteLine("***********************");
+
+    Console.WriteLine("Ingresa el ID");
+    id = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Ingresar nombres: ");
     firstName = Console.ReadLine();
 
     Console.WriteLine("Ingresar apellidos: ");
     lastName = Console.ReadLine();
 
-    Console.WriteLine("Ingresar salario devengado: ");
-    salary = Decimal.Parse(Console.ReadLine());
+    Console.WriteLine("¿Está activo?");
+    isActive = Convert.ToBoolean(Console.ReadLine());
 
-    //HardCoding = Quemar código
-    SalaryEmployee salaryEmployee = new SalaryEmployee()
+    Console.WriteLine("Ingresa el procentaje de comisión:");
+    float commissionPercentage = Convert.ToSingle(Console.ReadLine());
+
+    Console.WriteLine("Ingresa las ventas:");
+    decimal sales = Convert.ToDecimal(Console.ReadLine());
+
+    Employee commissionEmployee = new CommissionEmployee()
     {
-        Id = 1233456,
-        FirstName = Console.ReadLine(),
-        LastName = Console.ReadLine(),
+        Id = id,
+        FirstName = firstName,
+        LastName = lastName,
         BirthDate = dateObject,
         HiringDate = dateObject,
-        IsActive = true,
-        Salary = Decimal.Parse(Console.ReadLine()),
+        IsActive = isActive,
+        CommissionPercentage = commissionPercentage,
+        Sales = sales,
     };
 
-    Console.WriteLine(salaryEmployee);
+    //Console.WriteLine(commissionEmployee);
+    Console.WriteLine("");
 
 }
 catch (Exception ex)

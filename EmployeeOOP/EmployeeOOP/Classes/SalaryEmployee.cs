@@ -29,7 +29,7 @@ namespace EmployeeOOP.Classes
         public override string ToString()
         {
             return $"{base.ToString()}" +                 //Traigo la lógica y la información del método ToString de la clase padre, en este caso lo que hay dentro de Employee se concatena con la nueva información
-                $"Salario Devengado: {Salary : C2}\n\t ";
+                $"Salario Devengado: {Salary:C2}\n\t ";
         }
 
         #endregion
