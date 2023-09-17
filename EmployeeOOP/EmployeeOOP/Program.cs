@@ -7,6 +7,8 @@ try
     string firstName, lastName;
     decimal salary;
     bool isActive;
+    decimal commissionPercentage, hourValue, sales, baseCommission;
+    int hours;
 
     Console.WriteLine("OOP APPLICATION");
     Console.WriteLine("---------------");
@@ -58,37 +60,26 @@ try
     Console.WriteLine("* COMMISSION EMPLOYEE *");
     Console.WriteLine("***********************");
 
-    Console.WriteLine("Ingresa el ID");
-    id = Convert.ToInt32(Console.ReadLine());
-
-    Console.WriteLine("Ingresar nombres: ");
-    firstName = Console.ReadLine();
-
-    Console.WriteLine("Ingresar apellidos: ");
-    lastName = Console.ReadLine();
-
-    Console.WriteLine("¿Está activo?");
-    isActive = Convert.ToBoolean(Console.ReadLine());
-
     Console.WriteLine("Ingresa el procentaje de comisión:");
-    float commissionPercentage = Convert.ToSingle(Console.ReadLine());
+    commissionPercentage = Convert.ToDecimal(Console.ReadLine());
 
     Console.WriteLine("Ingresa las ventas:");
-    decimal sales = Convert.ToDecimal(Console.ReadLine());
+    sales = Convert.ToDecimal(Console.ReadLine());
 
     Employee commissionEmployee = new CommissionEmployee()
     {
-        Id = id,
+        Id = 12345,
         FirstName = firstName,
         LastName = lastName,
         BirthDate = dateObject,
         HiringDate = dateObject,
-        IsActive = isActive,
+        IsActive = true,
         CommissionPercentage = commissionPercentage,
         Sales = sales,
     };
 
-    //Console.WriteLine(commissionEmployee);
+    Console.WriteLine(commissionEmployee);
+
     Console.WriteLine("");
 
 }
