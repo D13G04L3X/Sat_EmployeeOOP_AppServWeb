@@ -4,6 +4,8 @@ try
 {
     //Declaración de variables
     int day, month, year;
+    string firstName, lastName;
+    decimal salary;
 
     Console.WriteLine("OOP APPLICATION");
     Console.WriteLine("---------------");
@@ -21,6 +23,30 @@ try
     Date dateObject = new Date(day, month, year);               //Parametrización de datos, Día/mes/Año
     Console.WriteLine("\n");
     Console.WriteLine(dateObject.ToString());
+
+    Console.WriteLine("Ingresar nombre completo: ");
+    firstName = Console.ReadLine();
+
+    Console.WriteLine("Ingresar apellidos: ");
+    lastName = Console.ReadLine();
+
+    Console.WriteLine("Ingresar salario devengado: ");
+    salary = Decimal.Parse(Console.ReadLine());
+
+    //HardCoding = Quemar código
+    SalaryEmployee salaryEmployee = new SalaryEmployee()
+    {
+        Id = 1233456,
+        FirstName = Console.ReadLine(),
+        LastName = Console.ReadLine(),
+        BirthDate = dateObject,
+        HiringDate = dateObject,
+        IsActive = true,
+        Salary = Decimal.Parse(Console.ReadLine()),
+    };
+
+    Console.WriteLine(salaryEmployee);
+
 }
 catch (Exception ex)
 {
