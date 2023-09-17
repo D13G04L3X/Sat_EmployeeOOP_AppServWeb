@@ -10,8 +10,9 @@ try
     decimal commissionPercentage, hourValue, sales, baseCommission;
     int hours;
 
-    Console.WriteLine("OOP APPLICATION");
-    Console.WriteLine("---------------");
+    Console.WriteLine("*******************");
+    Console.WriteLine("* OOP APPLICATION *");
+    Console.WriteLine("*******************");
 
     Console.Write("Ingresar el día: ");
     day = Convert.ToInt32(Console.ReadLine());
@@ -26,6 +27,7 @@ try
     Date dateObject = new Date(day, month, year);               //Parametrización de datos, Día/mes/Año
     Console.WriteLine("\n");
     Console.WriteLine(dateObject.ToString());
+    Console.WriteLine("");
 
     Console.WriteLine("*******************");
     Console.WriteLine("* SALARY EMPLOYEE *");

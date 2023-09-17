@@ -11,7 +11,6 @@ namespace EmployeeOOP.Classes
         #region Properties
 
         public decimal Hours { get; set; }
-
         public decimal HourValue { get; set; }
 
         #endregion
